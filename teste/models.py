@@ -7,7 +7,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Page(models.Model):
+class Post(models.Model):
     author = models.ForeignKey('auth.User')  # this is a link to another model.
     title = models.CharField(max_length=200) # this is how you define text with a limited number of characters.
     text = models.TextField() # this is for long text without a limit. Sounds ideal for blog post content, right?
