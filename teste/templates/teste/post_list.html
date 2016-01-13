@@ -1,32 +1,61 @@
+{% load staticfiles %}
 
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 <html>
     <head>
-<<<<<<< HEAD
-        <title>Toyoda's first Project</title>
+        <title>Luciana - Testing  Project</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div>
-            <h1><a href="">Toyoda's first Project</a></h1>
+        <div class="page-header">
+            <h1><a href="">Luciana - Testing Project</a></h1>
 =======
-        <title>Toyoda's first Project</title>
+        <title>Luciana - Testing  Project</title>
     </head>
     <body>
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
         <div>
-            <h1><a href="">Toyoda's first Project</a></h1>
->>>>>>> 4e3619df6da474fe4d2947c4df766ceae66d96ba
+             <div class="content container">
+                <div class="row">
+                    <div class="col-md-8">
+                        {% for post in posts %}
+                            <div class="post">
+                                <div class="date">
+                                    <p>published: {{ post.published_date }}</p>
+                                </div>
+                                <h1><a href="">{{ post.title }}</a></h1>
+                                <p>{{ post.text|linebreaks }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Description</a></h2>
-            <p> Somente experimentando e vendo o que tudo isso produz. Ainda em estagio inicial pois quero colocar os outros aplicativos.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">List of questions</a></h2>
-            <p>Um monte de perguntas que vao se abrindo em forma de leque, pra cobrir todas as formas de incertezas e erros.</p>
+            <p>published: 12.01.2016, 10:14</p>
+            <h2><a href="">List of questions - Link to the application</a></h2>
+            <p>Um monte de perguntas que vao se abrindo em forma de leque, para adquirir informacoes aditionais</p>
         </div>
     </body>
 </html>
